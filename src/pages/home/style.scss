@@ -1,22 +1,120 @@
 @import '../../assets/scss/reset';
 @import '../../assets/scss/mixin';
 
+.container {
+  width: 100%;
+}
+
+
+// header
+.header {
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 0 auto;
+}
+.nav {
+  @include wh(100%, 78px);
+  padding-top: 20px;
+  box-sizing: border-box;
+  .nav-right,
+  .nav-left {
+    display: inline-block;
+  }
+  .logo {
+    @include wh(150px, 52px);
+    vertical-align: middle;
+  }
+
+  .nav-item {
+    position: relative;
+    display: inline-block;
+    @include wh(80px, 38px);
+    margin: auto 24px;
+    border-radius: 5px;
+    line-height: 38px;
+    vertical-align: text-bottom;
+    text-align: center;
+    @include fontsc(16px, #999);
+    a {
+      color: #999;
+    }
+    &:hover {
+      @include bgc(#58a634, #fff);
+      a {
+        color: #fff;
+      }
+      &:hover {
+        .nav-sub {
+          display: block;
+        }
+      }
+    }
+    
+  }
+  
+  .qrpic {
+    @include wh(42px, 42px);
+    margin-left: 24px;
+  }
+  .nav-sub {
+    display: none;
+    position: absolute;
+    top: 34px;
+    left: 0;
+    width: 100%;
+    padding-top: 6px;
+    @include bgc(#58a634, #fff);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+    .sub-item {
+    border-radius: 5px;
+      
+      a {
+        color: #fff;
+      }
+      &:hover {
+        background: rgba(60, 112, 38, .7);;
+      }
+    }
+  }
+  
+}
+
+.content {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+// 商品列表
+ul[class^="goods-item"] {
+  margin-top: 30px;
+  font-size: 0;
+}
+
 .goodsList {
   display: inline-block;
-  @include wh(280px, 360px);
-  padding: 8px;
-  box-sizing: border-box;
+  @include wh(282px, 360px);
+  margin-top: 10px;
+  margin-right: 24px;
+  padding: 7px;
   border: 1px solid #fff;
+  text-align: center;
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
   &:hover {
     border-color: #4bb21e;
   }
+  .goods-video,
   .goods-img {
-    @include wh(258px, 180px);
+    @include wh(260px, 188px);
   }
   .goods-title {
     @include wh(100%, 56px);
     @include fontsc(18px, #333);
-    line-height: 56px;
+    line-height: 54px;
     font-weight: 400;
     overflow: hidden;
   }
@@ -24,11 +122,27 @@
     @include wh(100%, 48px);
     @include fontsc(15px, #999);
     overflow: hidden;
+    text-align: left;
   }
   .goods-more {
     @include wh(100%, 38px);
-    margin-top: 16px;
+    margin-top: 14px;
     @include bgc(#eee, #999);
     @include font(14px, 38px);
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 30px;
+  width: 100%;
+  margin-top: 50px;
+  text-align: center;
+  @include fontsc(15px, #ccc);
+  a {
+    @include fontsc(15px, #ccc);
+  }
+  .copyright {
+    margin-top: 10px;
   }
 }

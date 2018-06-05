@@ -1,0 +1,8 @@
+@import '../../assets/scss/reset';
+@import '../../assets/scss/mixin';
+
+.container {
+  @include wh(1200px, auto);
+  overflow: hidden;
+  margin: 10px auto 0;
+}
