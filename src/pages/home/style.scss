@@ -1,0 +1,34 @@
+@import '../../assets/scss/reset';
+@import '../../assets/scss/mixin';
+
+.goodsList {
+  display: inline-block;
+  @include wh(280px, 360px);
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  &:hover {
+    border-color: #4bb21e;
+  }
+  .goods-img {
+    @include wh(258px, 180px);
+  }
+  .goods-title {
+    @include wh(100%, 56px);
+    @include fontsc(18px, #333);
+    line-height: 56px;
+    font-weight: 400;
+    overflow: hidden;
+  }
+  .goods-des {
+    @include wh(100%, 48px);
+    @include fontsc(15px, #999);
+    overflow: hidden;
+  }
+  .goods-more {
+    @include wh(100%, 38px);
+    margin-top: 16px;
+    @include bgc(#eee, #999);
+    @include font(14px, 38px);
+  }
+}
