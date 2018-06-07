@@ -1,0 +1,133 @@
+/*
+ * @Author: Teaism 
+ * @Date: 2018-06-06 15:12:44 
+ * @Last Modified by: Teaism
+ * @Last Modified time: 2018-06-07 17:14:36
+ */
+
+@import '../../assets/scss/mixin';
+ 
+.container {
+  width: 100%;
+}
+
+// header
+.header {
+  width: 1200px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 0 auto;
+}
+
+.nav {
+  @include wh(100%, 78px);
+  padding-top: 10px;
+  box-sizing: border-box;
+  .nav-right,
+  .nav-left {
+    display: inline-block;
+  }
+  .logo {
+    @include wh(150px, 52px);
+    vertical-align: middle;
+  }
+  .nav-ul {
+    margin-top: 10px;
+  }
+  .nav-item {
+    position: relative;
+    display: inline-block;
+    @include wh(80px, 38px);
+    margin: auto 24px;
+    border-radius: 5px;
+    line-height: 38px;
+    vertical-align: text-bottom;
+    text-align: center;
+    @include fontsc(16px, #999);
+    a {
+      color: #999;
+    }
+    &:hover {
+      @include bgc(#58a634, #fff);
+      a {
+        color: #fff;
+      }
+      &:hover {
+        .nav-sub-one {
+          display: block;
+        }
+      }
+    }
+  }
+  .qrpic {
+    @include wh(42px, 42px);
+    margin-left: 24px;
+  }
+  .nav-sub-two,
+  .nav-sub-one {
+    display: none;
+    position: absolute;
+    top: 34px;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    padding-top: 6px;
+    @include bgc(#58a634, #fff);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    .sub-item {
+      border-radius: 5px;
+      a {
+        color: #fff;
+      }
+      &:hover {
+        background: rgba(60, 112, 38, .7);
+        ;
+      }
+    }
+  }
+  .nav-sub-one {
+    .sub-item:hover {
+      .nav-sub-two {
+        display: block;
+      }
+    }
+  }
+  .nav-sub-two {
+    top: 6px;
+    padding-top: 0;
+    left: 80px;
+    border-radius: 5px;
+  }
+}
+
+.banner-top {
+  .goods-imgs {
+    width: 1200px;
+    height: 360px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background: #e8e8e8;
+    text-align: center;
+    .goods-img {
+      width: 1200px;
+      height: 360px;
+    }
+  }
+}
+
+
+.footer {
+  position: absolute;
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  text-align: center;
+  @include fontsc(15px, #ccc);
+  a {
+    @include fontsc(15px, #ccc);
+  }
+  .copyright {
+    margin-top: 10px;
+  }
+}
