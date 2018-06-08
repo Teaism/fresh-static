@@ -2,13 +2,18 @@
  * @Author: Teaism 
  * @Date: 2018-06-06 15:12:44 
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-06-07 17:14:36
+ * @Last Modified time: 2018-06-08 19:03:09
  */
 
 @import '../../assets/scss/mixin';
  
+.content {
+  width: 1200px;
+  margin: 10px auto
+}
+
 .container {
-  width: 100%;
+  width: 100%
 }
 
 // header
@@ -22,7 +27,6 @@
 .nav {
   @include wh(100%, 78px);
   padding-top: 10px;
-  box-sizing: border-box;
   .nav-right,
   .nav-left {
     display: inline-block;
@@ -52,10 +56,8 @@
       a {
         color: #fff;
       }
-      &:hover {
-        .nav-sub-one {
-          display: block;
-        }
+      .nav-sub-one {
+        display: block;
       }
     }
   }

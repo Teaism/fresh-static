@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="../assets/vendor/swiper/swiper.min.css">
+<link rel="stylesheet" href="../../assets/vendor/swiper/swiper-4.3.2.min.css">
 	<title>Document</title>
 </head>
 
@@ -21,11 +21,25 @@
 				</div>
 				<div class="nav-left fr">
 					<ul class="nav-ul">
+							<li class="nav-item">
+									<a href="" class="">地利生鲜</a>
+								</li>
 						<li class="nav-item">
 							<a href="" class="">地利生鲜</a>
-							<ul class="nav-sub">
+							<ul class="nav-sub-one">
 								<li class="sub-item">
 									<a href="" class="">地利生鲜</a>
+									<ul class="nav-sub-two">
+											<li class="sub-item">
+												<a href="" class="">地利生鲜</a>
+											</li>
+											<li class="sub-item">
+												<a href="" class="">地利生鲜</a>
+											</li>
+											<li class="sub-item">
+												<a href="" class="">地利生鲜</a>
+											</li>
+										</ul>
 								</li>
 								<li class="sub-item">
 									<a href="" class="">地利生鲜</a>
@@ -36,17 +50,87 @@
 							</ul>
 						</li>
 						<li class="nav-item">
-							<a href="" class="">地利生鲜</a>
-						</li>
+								<a href="" class="">地利生鲜</a>
+								<ul class="nav-sub-one">
+									<li class="sub-item">
+										<a href="" class="">地利生鲜</a>
+										<ul class="nav-sub-two">
+												<li class="sub-item">
+													<a href="" class="">地利生鲜</a>
+												</li>
+												<li class="sub-item">
+													<a href="" class="">地利生鲜</a>
+												</li>
+												<li class="sub-item">
+													<a href="" class="">地利生鲜</a>
+												</li>
+											</ul>
+									</li>
+									<li class="sub-item">
+										<a href="" class="">地利生鲜</a>
+									</li>
+									<li class="sub-item">
+										<a href="" class="">地利生鲜</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+									<a href="" class="">地利生鲜</a>
+									<ul class="nav-sub-one">
+										<li class="sub-item">
+											<a href="" class="">地利生鲜</a>
+											<ul class="nav-sub-two">
+													<li class="sub-item">
+														<a href="" class="">地利生鲜</a>
+													</li>
+													<li class="sub-item">
+														<a href="" class="">地利生鲜</a>
+													</li>
+													<li class="sub-item">
+														<a href="" class="">地利生鲜</a>
+													</li>
+												</ul>
+										</li>
+										<li class="sub-item">
+											<a href="" class="">地利生鲜</a>
+										</li>
+										<li class="sub-item">
+											<a href="" class="">地利生鲜</a>
+										</li>
+									</ul>
+								</li>
+						
+						
 					</ul>
 				</div>
 			</div>
 		</header>
-		<div class="content">
-			<div class="bannerwrap">
-
+		<div class="bannerwrap">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="./images/big.png" alt="">
+						<div class="coverbg"></div>
+					</div>
+					<div class="swiper-slide">
+						<img src="./images/a.png" alt="">
+						<div class="coverbg"></div>
+					</div>
+					<div class="swiper-slide">
+						<img src="./images/b.png" alt="">
+						<div class="coverbg"></div>
+					</div>
+					<div class="swiper-slide">
+						<img src="./images/head.jpg" alt="">
+						<div class="coverbg"></div>
+					</div>
+				</div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
 			</div>
-			<div class="goodswrap">
+		</div>
+		<div class="content">
+			<div class="goods-list-wrap">
 				<ul class="goods-item">
 					<li class="goodsList">
 						<a href="" class="">
@@ -100,18 +184,40 @@
 				</ul>
 			</div>
 		</div>
+		<footer class="footer">
+				<div>
+					<a href="" class="">关于我们</a>&nbsp;&nbsp;|&nbsp;
+					<a href="" class="">关于我们</a>&nbsp;&nbsp;|&nbsp;
+					<a href="" class="">关于我们</a>&nbsp;&nbsp;|&nbsp;
+					<a href="" class="">关于我们</a>&nbsp;&nbsp;
+				</div>
+				<div class="copyright">宁1232434 &nbsp;&nbsp;&nbsp;四川成都锦江区疯狂司法解释离开房间啊雷锋</div>
+			</footer>
 	</div>
 
-	<footer class="footer">
-		<div>
-			<a href="" class="">关于我们</a>&nbsp;&nbsp;|&nbsp;
-			<a href="" class="">关于我们</a>&nbsp;&nbsp;|&nbsp;
-			<a href="" class="">关于我们</a>&nbsp;&nbsp;|&nbsp;
-			<a href="" class="">关于我们</a>&nbsp;&nbsp;
-		</div>
-		<div class="copyright">宁1232434 &nbsp;&nbsp;&nbsp;四川成都锦江区疯狂司法解释离开房间啊雷锋</div>
-	</footer>
 </body>
 
-<script src="../assets/vendor/swiper/swiper.min.js"></script>
+<script src="../../assets/vendor/swiper/swiper-4.3.2.min.js"></script>
+<script>
+	var mySwiper = new Swiper('.bannerwrap .swiper-container', {
+		/* autoplay: {
+			disableOnInteraction: false
+		},
+		slidesPerView: 'auto',
+		spaceBetween: 30,
+		loop: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		} */
+		autoplay:{
+			disableOnInteraction:false
+		},
+		loop:true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+</script>
 </html>

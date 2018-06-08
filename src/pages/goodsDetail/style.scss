@@ -1,8 +1,13 @@
 @import '../../assets/scss/reset';
+@import '../../assets/scss/common';
 @import '../../assets/scss/mixin';
 
-.container {
-  @include wh(1200px, auto);
+.cus-content {
+  width: 1200px;
+  text-align: center;
   overflow: hidden;
-  margin: 10px auto 0;
+  img {
+    max-width: 1200px;
+    height: auto
+  }
 }
