@@ -7,10 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>map</title>
   <script src="http://api.map.baidu.com/api?v=2.0&ak=vHelYjO3oLDkeHv8H6Y8VK8xvcWkDsi6"></script>
-	<script src="http://api.map.baidu.com/library/InfoBox/1.2/src/InfoBox_min.js"></script>
+  <script src="http://api.map.baidu.com/library/InfoBox/1.2/src/InfoBox_min.js"></script>
   <script src="../../assets/vendor/jquery/jquery-3.2.1.min.js"></script>
-<script src="../../assets/vendor/bdmap/MarkerClusterer.min.js"></script>
-<script src="../../assets/vendor/bdmap/TextIconOverlay_min.js"></script>
+  <script src="../../assets/vendor/bdmap/MarkerClusterer.min.js"></script>
+  <script src="../../assets/vendor/bdmap/TextIconOverlay_min.js"></script>
 </head>
 
 <body>
@@ -119,10 +119,12 @@
       </div>
       <div class="mapwrap">
         <div id="mapDiv"></div>
-        <div id="r-result">请输入:
-          <input type="text" id="suggestId" size="20" value="百度" style="width:150px;" />
+        <div class="search">
+          <div id="r-result">
+            <input type="text" id="suggestId" size="20" value="百度" style="width:150px;" placeholder="搜索" />
+          </div>
+          <div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
         </div>
-        <div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
       </div>
     </div>
     <footer class="footer">

@@ -2,16 +2,36 @@
  * @Author: Teaism 
  * @Date: 2018-06-08 18:39:29 
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-06-12 18:38:54
+ * @Last Modified time: 2018-06-13 14:34:09
  */
 
- @import '../../assets/scss/reset';
- @import '../../assets/scss/common';
- @import '../../assets/scss/mixin';
+@import '../../assets/scss/reset';
+@import '../../assets/scss/common';
+@import '../../assets/scss/mixin';
 
- #mapDiv {
+
+.mapwrap {
+  position: relative;
+}
+
+#mapDiv {
   width: 1200px;
   height: 600px;
 }
+.search {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 250px;
+  height: 36px;
+  background: #fff;
+}
 
-
+#suggestId {
+  width: 250px!important;
+  height: 36px;
+  border: 1px solid #ddd;
+  vertical-align: middle;
+  text-indent: 20px;
+  font-size: 15px; 
+}

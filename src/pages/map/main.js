@@ -2,11 +2,13 @@
 * @Author: fanger
 * @Date:   2018-04-16 12:34:35
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-06-12 18:26:32
+ * @Last Modified time: 2018-06-13 17:30:24
 */
 
 
 import './style.scss';
+// const addressDate from  = require('./addressData.js');
+import addressDate from './addressData.js'
 
 //          第三方InfoBox时保存上次打开的窗口
 var infoBoxTemp = null;
@@ -33,30 +35,13 @@ $(function () {
 
     //所有客户地址信息
     // customerAddresses = ${customerAddress};
-    customerAddresses = [{
-            "operatingLng": "106.574125",
-            "operatingLat": "29.522232",
-            "name": "成都锦江区",
-            "address": "成都锦江区"
-        }, {
-            "operatingLng": "119.037372",
-            "operatingLat": "25.460743",
-            "name": "福建",
-            "address": "福建莆田"
-        },
-        {
-            "operatingLng": "126.563976",
-            "operatingLat": "45.799739",
-            "name": "哈哈",
-            "address": "哈尔滨哈尔滨哈尔滨哈尔滨哈尔滨哈尔滨哈尔滨哈尔滨哈尔滨哈尔滨"
-        }
-    ]
+    customerAddresses = addressDate
     viewCustomerMap();
 });
 
 function initMap() {
     map = new BMap.Map("mapDiv");
-    map.centerAndZoom(new BMap.Point(126.563976, 45.799739), 8);
+    map.centerAndZoom(new BMap.Point(126.563976, 45.799739), 5);
     map.enableScrollWheelZoom();
 }
 
@@ -70,21 +55,24 @@ function viewCustomerMap() {
         // if ((null == customerAddress.type){
         pt = new BMap.Point(customerAddress.operatingLng, customerAddress.operatingLat);
         marker = new BMap.Marker(pt, {
-            icon: new BMap.Icon("https://cdn-img.easyicon.net/png/418/41879.gif", new BMap.Size(23, 25), {
+            icon: new BMap.Icon("http://118.190.235.31/template/default/_resources/images/mapShop.png", new BMap.Size(29, 23), {
                 anchor: new BMap.Size(7, 20)
             })
         });
         //绑定自定义属性
         marker.meta = {
             id: customerAddress.id,
-            name: customerAddress.name
+            name: customerAddress.name,
+            address: customerAddress.address
         };
         //   map.addOverlay(marker);
         //标签显示在图标下方
         label = new window.BMap.Label(customerAddress.name, {
-            offset: new window.BMap.Size(-10, 25)
+            offset: new window.BMap.Size(-36, 25)
         });
         label.setStyle({
+            width: '100px',
+            textAlign: 'center',
             border: '0px',
             background: "transparent none repeat"
         });
@@ -96,7 +84,7 @@ function viewCustomerMap() {
             if (infoBoxTemp) {
                 infoBoxTemp.close();
             }
-            var content = [this.meta.name];
+            var content = [this.meta.address];
             var opts = {
                 "boxStyle": {
                     width: "300px",
@@ -104,7 +92,7 @@ function viewCustomerMap() {
                     background: "#fff",
                     border: "1px solid #118bde"
                 },
-                "closeIconUrl": "closeIcon.png"
+                "closeIconUrl": "https://findicons.com/files/icons/131/software/16/cancel.png"
             }
             var infoBox = new BMapLib.InfoBox(map, content, opts);
             infoBoxTemp = infoBox;
