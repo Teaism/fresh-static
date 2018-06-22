@@ -2,7 +2,7 @@
  * @Author: fanger
  * @Date:   2018-03-12 10:53:12
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-06-05 19:28:43
+ * @Last Modified time: 2018-06-22 17:30:44
  */
 
 const path = require('path');
@@ -28,12 +28,19 @@ function getEntry(globPath) {
   return entries;
 }
 
+
 // 基础配置
 const modeEnv = process.env.NODE_ENV === 'production' ? true : false;
 
 const webpackConfig = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
-  entry: pagesEntry,
+  // entry: pagesEntry,
+  entry: Object.assign({}, pagesEntry
+    /* , {
+        // 用到什么公共lib（例如jquery.js），就把它加进vendor去，目的是将公用库单独提取打包
+        'vendor': ['jquery', 'aaa']
+      } */
+  ),
   module: {
     rules: [{
         test: /\.scss$/,
@@ -94,11 +101,33 @@ const webpackConfig = {
       }
     ]
   },
+  optimization: {
+    splitChunks: {
+      // chunks: 'initial', // 只对入口文件处理
+      chunks: 'all',
+      name: true,
+      /*  cacheGroups: {
+         commons: { // split `common`和`components`目录下被打包的代码到`page/commons.js && .css`
+           test: /assets\/scss\/|assets\/js\//,
+           // name: '../dist/assets/common',
+           priority: 10,
+           enforce: true
+         }
+       } */
+    },
+    runtimeChunk: {
+      name: 'manifest'
+    }
+  },
   plugins: [
     // 提取css
     new ExtractTextPlugin({
       //输出的路径及文件名
-      filename: '[name]/[contenthash].css',
+      // filename: '[name]/[contenthash].css', //输出到入口文件路径下即页面同目录
+      filename: '../dist/assets/style/[name].css',
+      /* filename: (getPath) => {
+        return getPath('../dist/assets/style/[name].css').replace('pages/', '');
+      }, */
       allChunks: true
       // disable: process.env.NODE_ENV === '"development"'
     }),
@@ -130,8 +159,8 @@ const webpackConfig = {
 
 // 遍历页面目录生成多入口
 Object.keys(pagesEntry).forEach(function (pathname) {
-  let fileOut = path.join(__dirname, 'dist/' + [pathname] + '/' + pathname.slice(pathname.lastIndexOf('/')) + '.html');
-  let tmplOrigin = path.join(__dirname, 'src/' + [pathname] + '/' + pathname.slice(pathname.lastIndexOf('/')) + '.html');
+  let fileOut = path.join(__dirname, 'dist/' + [pathname] + pathname.slice(pathname.lastIndexOf('/')) + '.html');
+  let tmplOrigin = path.join(__dirname, 'src/' + [pathname] + pathname.slice(pathname.lastIndexOf('/')) + '.html');
   // 每个页面生成一个html
   let htmlPluginConf = {
     // 生成出来的html存放路径
@@ -139,9 +168,9 @@ Object.keys(pagesEntry).forEach(function (pathname) {
     // 模板路径
     template: tmplOrigin,
     // 注入所有js静态资源到html
-    inject: false
+    inject: false,
     // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-    // chunksSortMode: 'dependency',
+    chunksSortMode: 'dependency',
   };
 
   // console.log(pathname)

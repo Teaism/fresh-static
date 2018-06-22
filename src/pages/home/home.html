@@ -5,7 +5,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="../../assets/css/common.css">
 <link rel="stylesheet" href="../../assets/vendor/swiper/swiper-4.3.2.min.css">
 	<title>home</title>
 </head>
@@ -15,7 +14,7 @@
 		<header class="header">
 			<div class="nav clearfix">
 				<div class="nav-right fl">
-					<img class="logo" src="./images/big.png" alt="地利生鲜logo">
+					<img class="logo" src="./images/banner001.png" alt="地利生鲜logo">
 				</div>
 				<div class="fr qrcode">
 					<img src="./images/qrcode.jpg" class="qrpic" alt="地利生鲜二维码">
@@ -110,22 +109,14 @@
 		<div class="bannerwrap">
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide">
+					<div class="swiper-slide" style="background: url(./images/banner001.png) no-repeat center center; background-size: auto">
+					</div>
+					<div class="swiper-slide" style="background: url(./images/big.png) no-repeat center center; background-size: auto">
+					</div>
+					<!-- <div class="swiper-slide">
 						<img src="./images/big.png" alt="">
 						<div class="coverbg"></div>
-					</div>
-					<div class="swiper-slide">
-						<img src="./images/a.png" alt="">
-						<div class="coverbg"></div>
-					</div>
-					<div class="swiper-slide">
-						<img src="./images/b.png" alt="">
-						<div class="coverbg"></div>
-					</div>
-					<div class="swiper-slide">
-						<img src="./images/head.jpg" alt="">
-						<div class="coverbg"></div>
-					</div>
+					</div> -->
 				</div>
 				<div class="swiper-button-prev"></div>
 				<div class="swiper-button-next"></div>
@@ -202,16 +193,7 @@
 <script src="../../assets/vendor/swiper/swiper-4.3.2.min.js"></script>
 <script>
 	var mySwiper = new Swiper('.bannerwrap .swiper-container', {
-		/* autoplay: {
-			disableOnInteraction: false
-		},
-		slidesPerView: 'auto',
-		spaceBetween: 30,
-		loop: true,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		} */
+		centeredSlides : true,
 		autoplay:{
 			disableOnInteraction:false
 		},

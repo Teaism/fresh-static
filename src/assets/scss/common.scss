@@ -2,9 +2,11 @@
  * @Author: Teaism 
  * @Date: 2018-06-06 15:12:44 
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-06-08 19:03:09
+ * @Last Modified time: 2018-06-22 17:04:59
  */
 
+
+@import '../../assets/scss/reset';
 @import '../../assets/scss/mixin';
  
 .content {
@@ -77,6 +79,7 @@
       top: 48px;
       right: 0;
       display: inline;
+      z-index: 999;
     }
 
   }
