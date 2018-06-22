@@ -1,6 +1,10 @@
 @import '../../assets/scss/reset';
 @import '../../assets/scss/common';
 @import '../../assets/scss/mixin';
+
+  body {
+    background: #f6f7f6;
+  }
   // 商品列表
   ul[class^="goods-item"] {
     margin-top: 30px;
@@ -8,11 +12,13 @@
   }
   .goodsList {
     display: inline-block;
-    @include wh(282px, 360px);
-    margin-top: 10px;
-    margin-right: 24px;
+    background: #fff;
+    box-shadow: 0 0 10px 5px #eee;
+    @include wh(278px, 382px);
+    margin-bottom: 25px;
+    margin-right: 29px;
     padding: 7px;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     text-align: center;
     &:nth-child(4n) {
       margin-right: 0;
@@ -25,22 +31,24 @@
       @include wh(260px, 188px);
     }
     .goods-title {
-      @include wh(100%, 56px);
+      @include wh(100%, 66px);
       @include fontsc(18px, #333);
-      line-height: 54px;
+      line-height: 66px;
       font-weight: 400;
       overflow: hidden;
     }
     .goods-des {
       @include wh(100%, 48px);
+      margin-bottom: 26px;
       @include fontsc(15px, #999);
       overflow: hidden;
       text-align: left;
+      line-height: 26px;
     }
     .goods-more {
       @include wh(100%, 38px);
       margin-top: 14px;
-      @include bgc(#eee, #999);
+      @include bgc(#f1f1f1, #999);
       @include font(14px, 38px);
     }
   }

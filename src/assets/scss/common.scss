@@ -61,9 +61,24 @@
       }
     }
   }
-  .qrpic {
-    @include wh(42px, 42px);
-    margin-left: 24px;
+  .qrcode {
+    position: relative;
+    cursor: pointer;
+    .qrpic {
+      @include wh(42px, 42px);
+      margin-top: 5px;
+      margin-left: 24px;
+    }
+    .qrbig {
+      display: none;
+    }
+    &:hover .qrbig {
+      position: absolute;
+      top: 48px;
+      right: 0;
+      display: inline;
+    }
+
   }
   .nav-sub-two,
   .nav-sub-one {
