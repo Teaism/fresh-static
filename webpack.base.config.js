@@ -2,7 +2,7 @@
  * @Author: fanger
  * @Date:   2018-03-12 10:53:12
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-06-22 17:30:44
+ * @Last Modified time: 2018-08-07 18:09:32
  */
 
 const path = require('path');
@@ -151,7 +151,9 @@ const webpackConfig = {
     path: path.join(__dirname, 'dist'),
     // 发布地址，打包文件中所有相对路径引用的资源都会被配置的路径所替换。
     // publicPath: path.join(__dirname, 'dist'),
-    filename: '[name]/[hash].js',
+    // [chunkhash]
+    // filename: '[name]/[hash].js',
+    filename: dev ? '[name].js' : '[chunkhash].js',
     chunkFilename: '[name]/[name].[hash:5].bundle.js'
   }
 };
