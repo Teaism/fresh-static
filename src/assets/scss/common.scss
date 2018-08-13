@@ -2,7 +2,7 @@
  * @Author: Teaism 
  * @Date: 2018-06-06 15:12:44 
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-06-22 17:04:59
+ * @Last Modified time: 2018-08-13 16:13:21
  */
 
 
@@ -45,13 +45,12 @@
     display: inline-block;
     @include wh(80px, 38px);
     margin: auto 24px;
-    border-radius: 5px;
     line-height: 38px;
     vertical-align: text-bottom;
     text-align: center;
-    @include fontsc(16px, #999);
+    @include fontsc(16px, #333);
     a {
-      color: #999;
+      color: #333;
     }
     &:hover {
       @include bgc(#58a634, #fff);
@@ -93,10 +92,7 @@
     width: 100%;
     padding-top: 6px;
     @include bgc(#58a634, #fff);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
     .sub-item {
-      border-radius: 5px;
       a {
         color: #fff;
       }
@@ -117,7 +113,6 @@
     top: 6px;
     padding-top: 0;
     left: 80px;
-    border-radius: 5px;
   }
 }
 
@@ -143,9 +138,9 @@
   margin-top: 60px;
   margin-bottom: 20px;
   text-align: center;
-  @include fontsc(15px, #ccc);
+  @include fontsc(15px, #999);
   a {
-    @include fontsc(15px, #ccc);
+    @include fontsc(15px, #999);
   }
   .copyright {
     margin-top: 10px;

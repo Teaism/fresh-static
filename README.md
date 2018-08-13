@@ -1,17 +1,16 @@
 
 # webpack multi-pages config
 
-
 ## Download or Clone
 
-```
+``` 
 //clone
 $ https://github.com/Teaism/lnwebpack.git
 ```
 
 ## Install
 
-```
+``` 
 $ npm install
 ```
 
@@ -30,6 +29,6 @@ webpack.base.config  //基础配置
 webpack.dev.config   //开发环境配置
 webpack.prod.config  //生产环境配置
 
-## dir 
+## dir
 
 src

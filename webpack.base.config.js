@@ -2,7 +2,7 @@
  * @Author: fanger
  * @Date:   2018-03-12 10:53:12
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-08-07 18:09:32
+ * @Last Modified time: 2018-08-13 20:22:31
  */
 
 const path = require('path');
@@ -30,7 +30,7 @@ function getEntry(globPath) {
 
 
 // 基础配置
-const modeEnv = process.env.NODE_ENV === 'production' ? true : false;
+const modeDev= process.env.NODE_ENV === 'development' ? true : false;
 
 const webpackConfig = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
@@ -50,7 +50,7 @@ const webpackConfig = {
               loader: 'css-loader',
               options: {
                 sourceMap: true,
-                minimize: modeEnv,
+                minimize: !modeDev,
                 importLoaders: 2
               }
             }, {
@@ -97,6 +97,7 @@ const webpackConfig = {
             // name: '[path]/[name].[hash:8].[ext]'
             name: '[path]/[name].[ext]'
           }
+          
         }]
       }
     ]
@@ -128,18 +129,18 @@ const webpackConfig = {
       /* filename: (getPath) => {
         return getPath('../dist/assets/style/[name].css').replace('pages/', '');
       }, */
-      allChunks: true
+      allChunks: true,
       // disable: process.env.NODE_ENV === '"development"'
     }),
     // 复制src/pages/静态资源图片到build(dist)下
-    new CopyWebpackPlugin([{
-      // 通过context: 'src/'复制时直接从src/下复制到build下
-      context: 'src/',
-      from: '**/*',
-      toType: 'dir'
-    }], {
-      ignore: ['*.html', '*.js', '*.scss', '*.css']
-    }),
+    // new CopyWebpackPlugin([{
+    //   // 通过context: 'src/'复制时直接从src/下复制到build下
+    //   context: 'src/',
+    //   from: '**/*',
+    //   toType: 'dir'
+    // }], {
+    //   ignore: ['*.html', '*.js', '*.scss', '*.css']
+    // }),
     new CopyWebpackPluginVendor([{
       // 直接复制vendor到dist下
       context: 'src/',
@@ -151,10 +152,9 @@ const webpackConfig = {
     path: path.join(__dirname, 'dist'),
     // 发布地址，打包文件中所有相对路径引用的资源都会被配置的路径所替换。
     // publicPath: path.join(__dirname, 'dist'),
-    // [chunkhash]
-    // filename: '[name]/[hash].js',
-    filename: dev ? '[name].js' : '[chunkhash].js',
-    chunkFilename: '[name]/[name].[hash:5].bundle.js'
+    publicPath: '/dist/',
+    filename: modeDev ? '[name]/[name].js' : '[name]/[chunkhash].js'
+    // chunkFilename: '[name]/[name].[hash:5].bundle.js'
   }
 };
 
