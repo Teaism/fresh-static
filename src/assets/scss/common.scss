@@ -2,7 +2,7 @@
  * @Author: Teaism 
  * @Date: 2018-06-06 15:12:44 
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-08-13 16:13:21
+ * @Last Modified time: 2018-08-14 18:19:36
  */
 
 
@@ -117,18 +117,9 @@
 }
 
 .banner-top {
-  .goods-imgs {
-    width: 1200px;
-    height: 360px;
-    margin-bottom: 20px;
-    overflow: hidden;
-    background: #e8e8e8;
-    text-align: center;
-    .goods-img {
-      width: 1200px;
-      height: 360px;
-    }
-  }
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 

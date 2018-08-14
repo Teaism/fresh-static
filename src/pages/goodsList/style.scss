@@ -1,0 +1,83 @@
+/*
+ * @Author: Teaism 
+ * @Date: 2018-06-22 17:39:17 
+ * @Last Modified by: Teaism
+ * @Last Modified time: 2018-08-14 19:52:14
+ */
+@import '../../assets/scss/mixin';
+
+.banner-top {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.goodswrap {
+  margin-top: 70px;
+
+  .tabmenu {
+    float: left;
+    width: 130px;
+
+    .menu-item {
+      .item-title {
+        display: inline-block;
+        @include wh(119px, 40px);
+        @include fontsc(20px, #333);
+        line-height: 40px;
+        vertical-align: middle;
+      }
+
+      &:hover .item-title,
+      &.cur .item-title {
+        color: #42991c;
+      }
+
+      &:hover::after,
+      &.cur::after {
+        display: inline-block;
+        content: '';
+        @include wh(6px, 40px);
+        background: #42991c;
+        vertical-align: middle;
+      }
+    }
+  }
+  .tabwrap {
+    float: right;
+    width: 1065px;
+
+    .wrap-item {
+      position: relative;
+      display: inline-block;
+      @include wh(200px, 200px);
+      margin-left: 40px;
+      margin-bottom: 60px;
+      font-size: 0;
+
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+
+      .pic {
+        @include wh(200px, 200px);
+      }
+
+      .item-title {
+        display: none;
+      }
+      &:hover .item-title {
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        @include wh(100%, 46px);
+        background: rgba(0, 0, 0, 0.5);
+        @include fontsc(20px, #fff);
+        line-height: 46px;
+        overflow: hidden;
+        text-align: center;
+      }
+    }
+  }
+}
