@@ -2,10 +2,12 @@
 * @Author: fanger
 * @Date:   2018-04-16 12:34:35
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-06-22 17:39:30
+ * @Last Modified time: 2018-08-14 15:03:50
 */
 
 import './style.scss';
+import '../../assets/scss/common.scss';
+
 // const addressDate from  = require('./addressData.js');
 import addressDate from './addressData.js'
 

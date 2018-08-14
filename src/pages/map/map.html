@@ -15,111 +15,7 @@
 
 <body>
   <div class="container">
-    <header class="header">
-			<div class="nav clearfix">
-				<div class="nav-right fl">
-					<img class="logo" src="/static/banner001.png" alt="地利生鲜logo">
-				</div>
-				<div class="fr qrcode">
-					<img src="/static/qrcode.jpg" class="qrpic" alt="地利生鲜二维码">
-					<img src="/static/qrcode.jpg" class="qrbig" alt="地利生鲜二维码">
-				</div>
-				<div class="nav-left fr">
-					<ul class="nav-ul">
-							<li class="nav-item">
-									<a href="" class="">地利生鲜</a>
-								</li>
-						<li class="nav-item">
-							<a href="" class="">地利生鲜</a>
-							<ul class="nav-sub-one">
-								<li class="sub-item">
-									<a href="" class="">地利生鲜</a>
-									<ul class="nav-sub-two">
-											<li class="sub-item">
-												<a href="" class="">地利生鲜</a>
-											</li>
-											<li class="sub-item">
-												<a href="" class="">地利生鲜</a>
-											</li>
-											<li class="sub-item">
-												<a href="" class="">地利生鲜</a>
-											</li>
-										</ul>
-								</li>
-								<li class="sub-item">
-									<a href="" class="">地利生鲜</a>
-								</li>
-								<li class="sub-item">
-									<a href="" class="">地利生鲜</a>
-								</li>
-							</ul>
-						</li>
-						<li class="nav-item">
-								<a href="" class="">地利生鲜</a>
-								<ul class="nav-sub-one">
-									<li class="sub-item">
-										<a href="" class="">地利生鲜</a>
-										<ul class="nav-sub-two">
-												<li class="sub-item">
-													<a href="" class="">地利生鲜</a>
-												</li>
-												<li class="sub-item">
-													<a href="" class="">地利生鲜</a>
-												</li>
-												<li class="sub-item">
-													<a href="" class="">地利生鲜</a>
-												</li>
-											</ul>
-									</li>
-									<li class="sub-item">
-										<a href="" class="">地利生鲜</a>
-									</li>
-									<li class="sub-item">
-										<a href="" class="">地利生鲜</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item">
-									<a href="" class="">地利生鲜</a>
-									<ul class="nav-sub-one">
-										<li class="sub-item">
-											<a href="" class="">地利生鲜</a>
-											<ul class="nav-sub-two">
-													<li class="sub-item">
-														<a href="" class="">地利生鲜</a>
-													</li>
-													<li class="sub-item">
-														<a href="" class="">地利生鲜</a>
-													</li>
-													<li class="sub-item">
-														<a href="" class="">地利生鲜</a>
-													</li>
-												</ul>
-										</li>
-										<li class="sub-item">
-											<a href="" class="">地利生鲜</a>
-										</li>
-										<li class="sub-item">
-											<a href="" class="">地利生鲜</a>
-										</li>
-									</ul>
-								</li>
-						
-						
-					</ul>
-				</div>
-			</div>
-		</header>
     <div class="content">
-      <div class="banner-top">
-        <ul class="goods-item">
-          <li class="goodslist clearfix">
-            <p class="goods-imgs">
-              <img src="/static/big.png" alt="地利生鲜商品图片" class="goods-img">
-            </p>
-          </li>
-        </ul>
-      </div>
       <div class="mapwrap">
         <div id="mapDiv"></div>
         <div class="search">
@@ -128,8 +24,39 @@
           </div>
           <div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
         </div>
-      </div>
-    </div>
+			</div>
+			<div class="dl-form">
+				<h2>投诉与建议</h2>
+				<form action="">
+					<div class="form-item">
+						<label class="form-label" for="">姓名</label>
+						<input class="form-input" name="cusName" type="text" placeholder="必填" maxlength="6">
+					</div>
+					<div class="form-item">
+						<label class="form-label" for="">电话</label>
+						<input class="form-input" name="cusTel" type="text" placeholder="必填" maxlength="11">
+					</div>
+					<div class="form-item">
+						<label class="form-label" for="">所属门店门店门店</label>
+						<input class="form-input" name="cusShop" type="text" placeholder="必填" maxlength="20">
+					</div>
+					<div class="form-item">
+						<label class="form-label" for="">品类</label>
+						<input class="form-input" name="category" type="text" placeholder="必填" maxlength="10">
+					</div>
+					<div class="form-item">
+						<label class="form-label" for="">问题</label>
+						<textarea name="cusQ" id="" cols="30" rows="10" class="form-textarea" placeholder="必填" maxlength="150"></textarea>
+					</div>
+					<div class="form-submits">
+						<input type="button" class="form-submit" value="确认提交">
+					</div>
+					<div class="hd0">
+						<span class="input-error"></span>
+					</div>
+				</form>
+			</div>
+		</div>
     <footer class="footer">
       <div>
         <a href="" class="">关于我们</a>&nbsp;&nbsp;|&nbsp;
@@ -141,6 +68,4 @@
     </footer>
   </div>
 </body>
-
-
 </html>

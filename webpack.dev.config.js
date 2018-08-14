@@ -2,7 +2,7 @@
 * @Author: fanger
 * @Date:   2018-03-12 10:53:29
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-04-27 18:02:36
+ * @Last Modified time: 2018-08-14 11:30:58
 */
 
 const merge = require('webpack-merge');
@@ -15,19 +15,20 @@ module.exports = merge(base, {
 	devtool: 'inline-source-map',
 	devServer: {
 		// 本地服务器所加载的页面所在的目录
-		contentBase: path.resolve(__dirname, 'static'),
+		contentBase: path.resolve(__dirname, 'dist'),
     //通过publicPath路径访问
-    publicPath: '/',  //访问时带dist
+    publicPath: '/dist/',  //访问时带dist
     // publicPath: '/',  //访问时不带dist
 		host: '127.0.0.1',
 		port: '8012',
     //跳转
     // historyApiFallback: true, 
 		// 实时刷新
-		inline: true,
+		inline: true
+		/* ,
 		setup(app){
 			app.use('/static', express.static('./static'))
-		}
+		} */
 	}
 });
 

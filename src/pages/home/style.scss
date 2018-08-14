@@ -2,20 +2,20 @@
  * @Author: Teaism 
  * @Date: 2018-06-22 17:39:27 
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-08-13 20:31:16
+ * @Last Modified time: 2018-08-14 14:57:59
  */
 @import '../../assets/scss/mixin';
-@import '../../assets/scss/common';
 
 body {
   background: #f6f7f6;
-  background: url(./images/banner01.png)
+  // background: url(./images/banner01.png)
 }
 .intro {
   .intro-item {
     width: 1200px;
     margin: 100px auto 0;
     text-align: center;
+
   }
   .intro-goods {
     width: 100%;

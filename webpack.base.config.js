@@ -2,7 +2,7 @@
  * @Author: fanger
  * @Date:   2018-03-12 10:53:12
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-08-13 20:22:31
+ * @Last Modified time: 2018-08-14 17:00:19
  */
 
 const path = require('path');
@@ -99,6 +99,10 @@ const webpackConfig = {
           }
           
         }]
+      },
+      {
+        test: /\.(html)$/i,
+        use: ['html-withimg-loader']
       }
     ]
   },
@@ -125,7 +129,7 @@ const webpackConfig = {
     new ExtractTextPlugin({
       //输出的路径及文件名
       // filename: '[name]/[contenthash].css', //输出到入口文件路径下即页面同目录
-      filename: '../dist/assets/style/[name].css',
+      filename: modeDev ? '../dist/static/style/[name].css' : './static/style/[name].css',
       /* filename: (getPath) => {
         return getPath('../dist/assets/style/[name].css').replace('pages/', '');
       }, */
@@ -152,7 +156,9 @@ const webpackConfig = {
     path: path.join(__dirname, 'dist'),
     // 发布地址，打包文件中所有相对路径引用的资源都会被配置的路径所替换。
     // publicPath: path.join(__dirname, 'dist'),
-    publicPath: '/dist/',
+    // publicPath: '/',
+    // publicPath: modeDev ? '/' : 'http://localhost:8080/fresh-static/dist/',
+    publicPath: modeDev ? '/' : '../../',
     filename: modeDev ? '[name]/[name].js' : '[name]/[chunkhash].js'
     // chunkFilename: '[name]/[name].[hash:5].bundle.js'
   }
