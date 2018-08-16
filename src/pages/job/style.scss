@@ -1,0 +1,143 @@
+/*
+ * @Author: Teaism 
+ * @Date: 2018-06-22 17:39:17 
+ * @Last Modified by: Teaism
+ * @Last Modified time: 2018-08-16 15:09:31
+ */
+@import '../../assets/scss/mixin';
+@import '../../assets/scss/variable';
+
+.content {
+  width: 1000px;
+}
+
+@mixin jobSearchItem {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+}
+@mixin jobFilterItem {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  vertical-align: middle;
+}
+
+.job-search {
+  margin-top: 70px;
+  font-size: 16px;
+
+  .search-title {
+    @include jobSearchItem;
+    width: 110px;
+    text-align: center;
+    @include mainBlockBgC;
+  }
+
+  .search-content {
+    @include jobSearchItem;
+    width: 828px;
+    margin: 0 -5px 0;
+    border: 1px solid $defaultBorderColor;
+    @include fontsc(20px, #333);
+    text-indent: 20px;
+  }
+
+  .search-btn {
+    @include jobSearchItem;
+    width: 60px;
+    background: $mainBlockColor url(./images/search-icon.png) no-repeat center
+      center;
+    border: none;
+  }
+}
+
+.jobshow {
+  margin-top: 50px;
+  font-size: 16px;
+
+  .tabmenu {
+    .tab-item {
+      position: relative;
+      width: 100%;
+      margin-bottom: 20px;
+
+      .filter-title {
+        line-height: 30px;
+      }
+
+      .filter-wrap {
+        width: 850px;
+        height: 70px;
+        overflow: hidden;
+
+        &.showall {
+          height: auto;
+        }
+      }
+
+      .more-btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        line-height: 30px;
+        color: $linkBlueFontColor;
+        cursor: pointer;
+      }
+      
+      .filter-item {
+        @include jobFilterItem;
+        padding: 0 10px;
+        margin-left: 15px;
+        margin-bottom: 5px;
+        text-align: center;
+        cursor: pointer;
+        
+        &.cur,
+        &:hover {
+          @include mainBlockBgC;
+        }
+      }
+    }
+  }
+
+  .tabwrap {
+    margin-top: 20px;
+
+    .post-item {
+      position: relative;
+      border-bottom: 1px solid $defaultBorderColor;
+      padding: 30px 0;
+
+      .linkbox {
+        display: inline-block;
+        @include wh(100%, 100%);
+      }
+
+      .post-title {
+        margin-bottom: 5px;
+        @include fontsc(18px, $mainFontColor);
+      }
+      .post-des {
+        @include fontsc(16px, $defaultFontColor);
+      }
+      .apply-btn {
+        position: absolute;
+        top: 35px;
+        right: 0;
+        display: inline-block;
+        @include wh(120px, 40px);
+        border: 1px solid $mainBorderColor;
+        border-radius: 5px;
+        line-height: 40px;
+        text-align: center;
+        color: $mainFontColor;
+
+        &:hover {
+          @include mainBlockBgC;
+        }
+      }
+    }
+  }
+}

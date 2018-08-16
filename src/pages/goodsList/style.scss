@@ -2,8 +2,9 @@
  * @Author: Teaism 
  * @Date: 2018-06-22 17:39:17 
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-08-14 19:52:14
+ * @Last Modified time: 2018-08-15 10:17:29
  */
+@import '../../assets/scss/variable';
 @import '../../assets/scss/mixin';
 
 .banner-top {
@@ -20,6 +21,8 @@
     width: 130px;
 
     .menu-item {
+      margin-bottom: 34px;
+
       .item-title {
         display: inline-block;
         @include wh(119px, 40px);
@@ -30,7 +33,7 @@
 
       &:hover .item-title,
       &.cur .item-title {
-        color: #42991c;
+        color: $mainBlockColor;
       }
 
       &:hover::after,
@@ -38,7 +41,7 @@
         display: inline-block;
         content: '';
         @include wh(6px, 40px);
-        background: #42991c;
+        background: $mainBlockColor;
         vertical-align: middle;
       }
     }

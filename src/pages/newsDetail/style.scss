@@ -1,0 +1,62 @@
+/*
+ * @Author: Teaism 
+ * @Date: 2018-06-22 17:39:17 
+ * @Last Modified by: Teaism
+ * @Last Modified time: 2018-08-16 18:36:17
+ */
+@import '../../assets/scss/mixin';
+@import '../../assets/scss/variable';
+
+.news-title {
+  width: 100%;
+  margin-top: 30px;
+  line-height: 50px;
+  border-bottom: 1px solid $mainBorderColor;
+  font-size: 32px;
+  text-align: center;
+}
+
+.news-info {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 70px;
+
+  .news-date {
+    @include fontsc(18px, #999);
+    vertical-align: middle;
+  }
+
+  .share-icon {
+    display: inline-block;
+    @include wh(28px, 28px);
+    margin-left: 40px;
+    vertical-align: middle;
+  }
+
+  .sina-icon {
+    background: url(./images/sina-icon.png);
+
+    &:hover {
+      background: url(./images/sina-icon-hv.png);
+    }
+  }
+  .weixin-icon {
+    background: url(./images/weixin-icon.png);
+
+    &:hover {
+      background: url(./images/weixin-icon-hv.png);
+    }
+  }
+  .sharewrap-icon {
+    background: url(./images/sharewrap-icon.png);
+
+    &:hover {
+      background: url(./images/sharewrap-icon-hv.png);
+    }
+  }
+}
+
+.news-des {
+  width: 100%;
+  overflow: hidden;
+}

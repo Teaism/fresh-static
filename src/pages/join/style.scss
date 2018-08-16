@@ -1,0 +1,23 @@
+/*
+ * @Author: Teaism 
+ * @Date: 2018-06-22 17:39:17 
+ * @Last Modified by: Teaism
+ * @Last Modified time: 2018-08-16 10:32:04
+ */
+@import '../../assets/scss/mixin';
+@import '../../assets/scss/variable';
+@import '../../assets/scss/form-table';
+
+.join-intro {
+  width: 100%;
+  margin: 80px auto 0;
+  text-align: center;
+}
+
+.join-title {
+  margin-top: 60px;
+}
+
+.join-table {
+  width: 1200px;
+}

@@ -1,0 +1,34 @@
+/*
+ * @Author: Teaism 
+ * @Date: 2018-06-22 17:39:17 
+ * @Last Modified by: Teaism
+ * @Last Modified time: 2018-08-15 15:06:05
+ */
+@import '../../assets/scss/mixin';
+@import '../../assets/scss/variable';
+
+.content {
+  width: 100%;
+}
+.vip-intro {
+  .vipcard {
+    width: 1200px;
+    margin: 70px auto 0;
+  }
+  .vipinfo {
+    width: 1200px;
+    margin: 190px auto 0;
+  }
+  .vip-future {
+    width: 100%;
+    height: 540px;
+    margin-top: 110px;
+    padding-top: 100px;
+    text-align: center;
+  }
+  .vipjoin {
+    width: 1200px;
+    margin: 70px auto 0;
+  }
+}
+

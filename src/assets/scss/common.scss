@@ -2,20 +2,21 @@
  * @Author: Teaism 
  * @Date: 2018-06-06 15:12:44 
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-08-14 18:19:36
+ * @Last Modified time: 2018-08-16 11:30:02
  */
 
 
 @import '../../assets/scss/reset';
 @import '../../assets/scss/mixin';
  
+.container {
+  width: 100%;
+  font-size: $defaultFontColor;
+}
+
 .content {
   width: 1200px;
   margin: 10px auto
-}
-
-.container {
-  width: 100%
 }
 
 // header
@@ -120,8 +121,8 @@
   width: 100%;
   text-align: center;
   margin: 0 auto;
+  overflow: hidden;
 }
-
 
 .footer {
   position: absolute;
@@ -136,4 +137,20 @@
   .copyright {
     margin-top: 10px;
   }
+}
+
+// 主按钮
+.mainbtn-box {
+  width: 100%;
+  margin: 50px auto 0;
+  text-align: center;
+}
+.main-btn {
+  @include wh(160px, 48px);
+  @include mainBlockBgC;
+  border: none;
+  border-radius: 5px;
+  line-height: 48px;
+  font-size: 20px;
+  cursor: pointer;
 }

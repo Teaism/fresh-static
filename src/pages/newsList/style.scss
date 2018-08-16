@@ -2,9 +2,10 @@
  * @Author: Teaism 
  * @Date: 2018-06-22 17:39:17 
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-08-14 18:19:15
+ * @Last Modified time: 2018-08-15 10:16:36
  */
 @import '../../assets/scss/mixin';
+@import '../../assets/scss/variable';
 
 .banner-top {
   width: 100%;
@@ -41,7 +42,7 @@
       width: 310px;
     }
     .newstitle {
-      @include fontsc(20px, #3e891b);
+      @include fontsc(20px, $mainFontColor);
     }
     .newsdes {
       @include wh(100%, 74px);

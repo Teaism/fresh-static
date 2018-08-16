@@ -1,0 +1,73 @@
+/*
+ * @Author: Teaism 
+ * @Date: 2018-08-16 10:25:38 
+ * @Last Modified by: Teaism
+ * @Last Modified time: 2018-08-16 14:17:17
+ */
+
+@import '../../assets/scss/mixin';
+@import '../../assets/scss/variable';
+
+.form-title {
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.form-table {
+  margin: 0 auto;
+  border: 1px solid $defaultBorderColor;
+  border-bottom: none;
+  border-spacing: 0;
+
+  .col {
+    height: 48px;
+    text-indent: 10px;
+    vertical-align: middle;
+    border-bottom: 1px solid $defaultBorderColor;
+    // border-bottom: 1px solid $mainBorderColor;
+    font-size: 16px;
+    /* &:hover,
+    &.cur {
+      border-bottom: 1px solid $mainBorderColor;
+    } */
+  }
+  .lable {
+    margin-right: 15px;
+  }
+  .form-input {
+    display: inline-block;
+    @include wh(100%, 30px);
+    border-bottom: 2px solid #fff;
+    caret-color: $mainFontColor;
+    // border-bottom: 1px solid $mainBorderColor;
+    // border: 1px solid $mainBorderColor;
+    font-size: 16px;
+
+    &:hover,
+    &.cur {
+      // border: 1px solid $mainBorderColor;
+      border-bottom: 2px solid $mainBorderColor;
+    }
+  }
+  .form-checkbox {
+    margin-right: 10px;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      @include wh(15px, 15px);
+      background: #fff;
+      border: 1px solid $defaultBorderColor;
+    }
+  }
+  .lable.cur .form-checkbox::after {
+    content: '\221A';
+    border: 1px solid $mainBorderColor;
+    @include fontsc(16px, $mainFontColor);
+    text-align: center;
+  }
+}
+

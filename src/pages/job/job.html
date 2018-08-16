@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>job</title>
+	<link rel="stylesheet" href="../../assets/vendor/swiper/swiper-4.3.2.min.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="banner-top">
+			<img src="http://118.190.235.31/uploads/image/201806/20180607/5c850f53-1794-448e-b316-5e6ec5000243.jpeg" alt="" class="banner-top-pic">
+		</div>
+		<div class="content">
+			<div class="job-search">
+				<span class="search-title">职位搜索</span>
+				<input class="search-content" type="text" value="830">
+				<a href="" class="search-btn"></a>
+			</div>
+			<div class="jobshow">
+				<div class="tabmenu">
+					<div class="tab-item clearfix">
+						<div class="filter-title fl">职位类型：</div>
+						<div class="filter-wrap fl" data-filter="jobtype">
+							<span class="more-btn">展开</span>
+							<span class="filter-item filter-all cur">全部</span>
+							<span class="filter-item" data-jobtype="1">1</span>
+							<span class="filter-item" data-jobtype="2">2</span>
+							<span class="filter-item" data-jobtype="3">3</span>
+							<span class="filter-item" data-jobtype="4">4</span>
+							<span class="filter-item" data-jobtype="5">5</span>
+						</div>
+					</div>
+					<div class="tab-item clearfix">
+						<div class="filter-title fl">所属机构：</div>
+						<div class="filter-wrap fl" data-filter="joborg">
+							<span class="more-btn">展开</span>
+							<span class="filter-item filter-all cur">全部</span>
+							<span class="filter-item" data-joborg="1">1</span>
+							<span class="filter-item" data-joborg="2">2</span>
+							<span class="filter-item" data-joborg="3">3</span>
+							<span class="filter-item" data-joborg="4">4</span>
+							<span class="filter-item" data-joborg="5">5</span>
+						</div>
+					</div>
+					<div class="tab-item clearfix">
+						<div class="filter-title fl">工作地点：</div>
+						<div class="filter-wrap fl" data-filter="jobaddress">
+							<span class="more-btn">展开</span>
+							<span class="filter-item filter-all cur">全部</span>
+							<span class="filter-item" data-jobaddress="1">1</span>
+							<span class="filter-item" data-jobaddress="2">2</span>
+							<span class="filter-item" data-jobaddress="3">3</span>
+							<span class="filter-item" data-jobaddress="4">4</span>
+							<span class="filter-item" data-jobaddress="5">5</span>
+						</div>
+					</div>
+				</div>
+				<div class="tabwrap">
+					<div class="post-item" data-jobtype="3" data-joborg="" data-jobaddress="2">
+						<a href="" class="linkbox">
+							<div class="post-title">302</div>
+							<div class="post-des">
+								<span>8K-20K</span>
+								<span>经验1-3年/本科/全职/成都</span>
+								<a href="" class="apply-btn">立即申请</a>
+							</div>
+						</a>
+					</div>
+					<div class="post-item" data-jobtype="1" data-joborg="" data-jobaddress="5">
+						<a href="" class="linkbox">
+							<div class="post-title">105</div>
+							<div class="post-des">
+								<span>8K-20K</span>
+								<span>经验1-3年/本科/全职/成都</span>
+								<a href="" class="apply-btn">立即申请</a>
+							</div>
+						</a>
+					</div>
+					<div class="post-item" data-jobtype="1" data-joborg="" data-jobaddress="5">
+						<a href="" class="linkbox">
+							<div class="post-title">105</div>
+							<div class="post-des">
+								<span>8K-20K</span>
+								<span>经验1-3年/本科/全职/成都</span>
+								<a href="" class="apply-btn">立即申请</a>
+							</div>
+						</a>
+					</div>
+					<div class="post-item" data-jobtype="2" data-joborg="4" data-jobaddress="4">
+						<a href="" class="linkbox">
+							<div class="post-title">244</div>
+							<div class="post-des">
+								<span>8K-20K</span>
+								<span>经验1-3年/本科/全职/成都</span>
+								<a href="" class="apply-btn">立即申请</a>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div>
+				<a href="" class="">关于我们</a>&nbsp;&nbsp;|&nbsp;
+				<a href="" class="">关于我们</a>&nbsp;&nbsp;|&nbsp;
+				<a href="" class="">关于我们</a>&nbsp;&nbsp;|&nbsp;
+				<a href="" class="">关于我们</a>&nbsp;&nbsp;
+			</div>
+			<div class="copyright">宁1232434 &nbsp;&nbsp;&nbsp;四川成都锦江区疯狂司法解释离开房间啊雷锋</div>
+		</footer>
+	</div>
+
+</body>
+
+<script src="../../assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+<script>
+
+	// 职位搜索选择项
+	$('.filter-wrap .filter-item').click(function () {
+		var jobType, jobOrg, jobAddress;
+
+		$('.post-item').hide();
+
+		if ($(this).text() === '全部') {
+			$(this).addClass('cur');
+			$(this).siblings('.filter-item').removeClass('cur');
+			$('.post-item[data-' + $(this).parent('.filter-wrap').data('filter') + ']').show();
+
+		} else {
+
+			$(this).toggleClass('cur');
+
+			if ($(this).siblings('.filter-item.cur').length) {
+				$(this).siblings('.filter-all').removeClass('cur');
+
+				$(this).parent('.filter-wrap').find('.filter-item.cur').each(function (index, ele) {
+					$('.post-item[data-jobtype="' + $(ele).data('jobtype') + '"]').show();
+					$('.post-item[data-joborg="' + $(ele).data('joborg') + '"]').show();
+					$('.post-item[data-jobaddress="' + $(ele).data('jobaddress') + '"]').show();
+
+					// $('.post-item[data-jobtype="' + $(ele).data('jobtype') + '"][data-joborg="' + $(ele).data('joborg') + '"][data-jobaddress="' + $(ele).data('jobaddress') + '"]').show();
+				})
+			} else {
+				$(this).siblings('.filter-all').addClass('cur');
+				// console.log( $(this).parent('.filter-wrap').data('filter'))
+				$('.post-item[data-' + $(this).parent('.filter-wrap').data('filter') + ']').show();
+			}
+		}
+	})
+
+	$('.filter-wrap .more-btn').click(function () {
+		$(this).parent('.filter-wrap').toggleClass('showall');
+		if ($(this).text() === '展开') {
+			$(this).text('收起')
+		} else {
+			$(this).text('展开')
+		}
+	})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
