@@ -7,6 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>job</title>
 	<link rel="stylesheet" href="../../assets/vendor/swiper/swiper-4.3.2.min.css">
+	<script src="../../assets/vendor/jquery/jquery-3.2.1.min.js"></script>
 </head>
 
 <body>
@@ -24,9 +25,9 @@
 				<div class="tabmenu">
 					<div class="tab-item clearfix">
 						<div class="filter-title fl">职位类型：</div>
-						<div class="filter-wrap fl" data-filter="jobtype">
+						<div class="filter-wrap filter-jobtype fl " data-filter="jobtype">
 							<span class="more-btn">展开</span>
-							<span class="filter-item filter-all cur">全部</span>
+							<span class="filter-all cur">全部</span>
 							<span class="filter-item" data-jobtype="1">1</span>
 							<span class="filter-item" data-jobtype="2">2</span>
 							<span class="filter-item" data-jobtype="3">3</span>
@@ -36,9 +37,9 @@
 					</div>
 					<div class="tab-item clearfix">
 						<div class="filter-title fl">所属机构：</div>
-						<div class="filter-wrap fl" data-filter="joborg">
+						<div class="filter-wrap filter-joborg fl" data-filter="joborg">
 							<span class="more-btn">展开</span>
-							<span class="filter-item filter-all cur">全部</span>
+							<span class="filter-all cur">全部</span>
 							<span class="filter-item" data-joborg="1">1</span>
 							<span class="filter-item" data-joborg="2">2</span>
 							<span class="filter-item" data-joborg="3">3</span>
@@ -48,9 +49,9 @@
 					</div>
 					<div class="tab-item clearfix">
 						<div class="filter-title fl">工作地点：</div>
-						<div class="filter-wrap fl" data-filter="jobaddress">
+						<div class="filter-wrap filter-jobaddress fl" data-filter="jobaddress">
 							<span class="more-btn">展开</span>
-							<span class="filter-item filter-all cur">全部</span>
+							<span class="filter-all cur">全部</span>
 							<span class="filter-item" data-jobaddress="1">1</span>
 							<span class="filter-item" data-jobaddress="2">2</span>
 							<span class="filter-item" data-jobaddress="3">3</span>
@@ -60,9 +61,9 @@
 					</div>
 				</div>
 				<div class="tabwrap">
-					<div class="post-item" data-jobtype="3" data-joborg="" data-jobaddress="2">
+					<div class="post-item" data-jobtype="3" data-joborg="2" data-jobaddress="2">
 						<a href="" class="linkbox">
-							<div class="post-title">302</div>
+							<div class="post-title">322</div>
 							<div class="post-des">
 								<span>8K-20K</span>
 								<span>经验1-3年/本科/全职/成都</span>
@@ -70,9 +71,9 @@
 							</div>
 						</a>
 					</div>
-					<div class="post-item" data-jobtype="1" data-joborg="" data-jobaddress="5">
+					<div class="post-item" data-jobtype="1" data-joborg="1" data-jobaddress="5">
 						<a href="" class="linkbox">
-							<div class="post-title">105</div>
+							<div class="post-title">115</div>
 							<div class="post-des">
 								<span>8K-20K</span>
 								<span>经验1-3年/本科/全职/成都</span>
@@ -80,9 +81,9 @@
 							</div>
 						</a>
 					</div>
-					<div class="post-item" data-jobtype="1" data-joborg="" data-jobaddress="5">
+					<div class="post-item" data-jobtype="1" data-joborg="1" data-jobaddress="4">
 						<a href="" class="linkbox">
-							<div class="post-title">105</div>
+							<div class="post-title">114</div>
 							<div class="post-des">
 								<span>8K-20K</span>
 								<span>经验1-3年/本科/全职/成都</span>
@@ -115,66 +116,5 @@
 	</div>
 
 </body>
-
-<script src="../../assets/vendor/jquery/jquery-3.2.1.min.js"></script>
-<script>
-
-	// 职位搜索选择项
-	$('.filter-wrap .filter-item').click(function () {
-		var jobType, jobOrg, jobAddress;
-
-		$('.post-item').hide();
-
-		if ($(this).text() === '全部') {
-			$(this).addClass('cur');
-			$(this).siblings('.filter-item').removeClass('cur');
-			$('.post-item[data-' + $(this).parent('.filter-wrap').data('filter') + ']').show();
-
-		} else {
-
-			$(this).toggleClass('cur');
-
-			if ($(this).siblings('.filter-item.cur').length) {
-				$(this).siblings('.filter-all').removeClass('cur');
-
-				$(this).parent('.filter-wrap').find('.filter-item.cur').each(function (index, ele) {
-					$('.post-item[data-jobtype="' + $(ele).data('jobtype') + '"]').show();
-					$('.post-item[data-joborg="' + $(ele).data('joborg') + '"]').show();
-					$('.post-item[data-jobaddress="' + $(ele).data('jobaddress') + '"]').show();
-
-					// $('.post-item[data-jobtype="' + $(ele).data('jobtype') + '"][data-joborg="' + $(ele).data('joborg') + '"][data-jobaddress="' + $(ele).data('jobaddress') + '"]').show();
-				})
-			} else {
-				$(this).siblings('.filter-all').addClass('cur');
-				// console.log( $(this).parent('.filter-wrap').data('filter'))
-				$('.post-item[data-' + $(this).parent('.filter-wrap').data('filter') + ']').show();
-			}
-		}
-	})
-
-	$('.filter-wrap .more-btn').click(function () {
-		$(this).parent('.filter-wrap').toggleClass('showall');
-		if ($(this).text() === '展开') {
-			$(this).text('收起')
-		} else {
-			$(this).text('展开')
-		}
-	})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</script>
 
 </html>
