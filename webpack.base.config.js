@@ -2,7 +2,7 @@
  * @Author: fanger
  * @Date:   2018-03-12 10:53:12
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-08-14 17:00:19
+ * @Last Modified time: 2018-08-17 17:27:56
  */
 
 const path = require('path');
@@ -15,7 +15,7 @@ const glob = require('glob');
 
 // 获取指定路径下的多入口文件返回{name: path}
 // __dirname”是node.js中的一个全局变量，它指向当前执行脚本所在的目录H:\WWW\aaa\lnwebpack。
-var pagesEntry = getEntry(path.join(__dirname, 'src/pages/**/*.js'));
+var pagesEntry = getEntry(path.join(__dirname, 'src/pages/**/main.js'));
 
 function getEntry(globPath) {
   let entries = {};

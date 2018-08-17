@@ -25,52 +25,52 @@
 						<tr class="row cur">
 							<td class="col" colspan="2">申请加盟地区</td>
 							<td class="col" colspan="10">
-								<input type="text" class="form-input cur">
+								<input type="text" name="cusArea" required class="form-input cur">
 							</td>
 						</tr>
 						<tr class="row">
 							<td class="col" colspan="2">申请人姓名</td>
 							<td class="col" colspan="2">
-								<input type="text" class="form-input">
+								<input type="text" name="cusName" required class="form-input">
 							</td>
 							<td class="col" colspan="2">年龄</td>
 							<td class="col" colspan="2">
-								<input type="text" class="form-input">
+								<input type="text" name="cusAge" required class="form-input">
 							</td>
 							<td class="col" colspan="2">手机号</td>
 							<td class="col" colspan="2">
-								<input type="text" class="form-input">
+								<input type="text" name="cusTel" required class="form-input">
 							</td>
 						</tr>
 						<tr class="row">
 							<td class="col" colspan="2">邮政编码</td>
 							<td class="col" colspan="2">
-								<input type="text" class="form-input">
+								<input type="text" name="cusPostCode" required class="form-input">
 							</td>
 							<td class="col" colspan="2">文化程度</td>
 							<td class="col" colspan="2">
-								<input type="text" class="form-input">
+								<input type="text" name="cusEducation" required class="form-input">
 							</td>
 							<td class="col" colspan="2">是否注册公司</td>
 							<td class="col" colspan="2">
 								<lable class="lable cur">
-									<input type="checkbox" class="form-checkbox">是</lable>
+									<input type="radio" name="cusIsCompany" required class="form-radio">是</lable>
 								<lable class="lable">
-									<input type="checkbox" class="form-checkbox">否</lable>
+									<input type="radio" name="cusIsCompany" required class="form-radio">否</lable>
 							</td>
 						</tr>
 						<tr class="row">
 							<td class="col" colspan="2">公司性质</td>
 							<td class="col" colspan="3">
 								<lable class="lable">
-									<input type="checkbox" class="form-checkbox">合伙</lable>
+									<input type="radio" name="cusProperty" class="form-radio">合伙</lable>
 								<lable class="lable">
-									<input type="checkbox" class="form-checkbox">私营</lable>
+									<input type="radio" name="cusProperty" class="form-radio">私营</lable>
 								<lable class="lable">
-									<input type="checkbox" class="form-checkbox">经营范围</lable>
+									<input type="radio" name="cusProperty" class="form-radio">经营范围</lable>
 								<td class="col">经营范围</td>
 								<td class="col" colspan="6">
-									<input type="text" class="form-input">
+									<input type="text" name="cusRange" class="form-input">
 								</td>
 							</td>
 						</tr>
@@ -78,49 +78,49 @@
 							<td class="col" colspan="2">开店形式</td>
 							<td class="col" colspan="10">
 								<lable class="lable">
-									<input type="checkbox" class="form-checkbox">进驻商场</lable>
+									<input type="radio" name="cusShopMethod" required class="form-radio">进驻商场</lable>
 								<lable class="lable">
-									<input type="checkbox" class="form-checkbox">开加盟店</lable>
+									<input type="radio" name="cusShopMethod" required class="form-radio">开加盟店</lable>
 							</td>
 						</tr>
 						<tr class="row">
 							<td class="col" colspan="2">商场名称</td>
 							<td class="col" colspan="3">
-								<input type="text" class="form-input">
+								<input type="text" name="cusMarketName" required class="form-input">
 							</td>
 							<td class="col">商场情况</td>
 							<td class="col" colspan="6">
 								<lable class="lable">
-									<input type="checkbox" class="form-checkbox">自有</lable>
+									<input type="radio" name="cusMarketSituation" required class="form-radio">自有</lable>
 								<lable class="lable">
-									<input type="checkbox" class="form-checkbox">租赁</lable>
+									<input type="radio" name="cusMarketSituation" required class="form-radio">租赁</lable>
 								<lable class="lable">
-									<input type="checkbox" class="form-checkbox">寻找中</lable>
+									<input type="radio" name="cusMarketSituation" required class="form-radio">寻找中</lable>
 							</td>
 						</tr>
 						<tr class="row">
 							<td class="col" colspan="2">计划开店数量</td>
 							<td class="col" colspan="3">
-								<input type="text" class="form-input">
+								<input type="text" name="cusShopNum" required class="form-input">
 							</td>
 							<td class="col">开店面积</td>
 							<td class="col" colspan="5">
-								<input type="text" class="form-input">
+								<input type="text" name="cusShopArea" required class="form-input">
 							</td>
 						</tr>
 						<tr class="row">
 							<td class="col" colspan="2">准备开店地址</td>
 							<td class="col" colspan="10">
-								<input type="text" class="form-input">
+								<input type="text" name="cusShopAddress" required class="form-input">
 							</td>
 						</tr>
 						<tr class="row">
 							<td class="col" colspan="3">是否从事过生鲜零食行业</td>
 							<td class="col" colspan="9">
 								<lable class="lable">
-									<input type="checkbox" class="form-checkbox">是</lable>
+									<input type="radio" name="cusIsExperience" required class="form-radio">是</lable>
 								<lable class="lable">
-									<input type="checkbox" class="form-checkbox">否</lable>
+									<input type="radio" name="cusIsExperience" required class="form-radio">否</lable>
 							</td>
 						</tr>
 						<tr class="row">
@@ -129,28 +129,28 @@
 						<tr class="row">
 							<td class="col" colspan="12">
 								<lable class="lable">
-									<input type="checkbox" class="form-checkbox">到地利生鲜购物</lable>
+									<input type="radio" name="cusKnowMe" required class="form-radio">到地利生鲜购物</lable>
 								<lable class="lable">
-									<input type="checkbox" class="form-checkbox">朋友介绍</lable>
+									<input type="radio" name="cusKnowMe" required class="form-radio">朋友介绍</lable>
 								<lable class="lable">
-									<input type="checkbox" class="form-checkbox">公司网站(微信号)</lable>
+									<input type="radio" name="cusKnowMe" required class="form-radio">公司网站(微信号)</lable>
 								<lable class="lable">
-									<input type="checkbox" class="form-checkbox">其他</lable>
+									<input type="radio" name="cusKnowMe" required class="form-radio">其他</lable>
 							</td>
 						</tr>
 						<tr class="row">
 							<td class="col" colspan="2">您计划投资的金额</td>
 							<td class="col">
-								<input type="text" class="form-input">
+								<input type="text" name="cusMoney" required class="form-input">
 							</td>
 							<td class="col">您所需投入的资金保障</td>
 							<td class="col" colspan="8">
 								<lable class="lable">
-									<input type="checkbox" class="form-checkbox">自筹</lable>
+									<input type="radio" name="cusMoneyOrigin" required class="form-radio">自筹</lable>
 								<lable class="lable">
-									<input type="checkbox" class="form-checkbox">股东型</lable>
+									<input type="radio" name="cusMoneyOrigin" required class="form-radio">股东型</lable>
 								<lable class="lable">
-									<input type="checkbox" class="form-checkbox">借贷</lable>
+									<input type="radio" name="cusMoneyOrigin" required class="form-radio">借贷</lable>
 							</td>
 						</tr>
 						<tr class="row">
@@ -158,7 +158,7 @@
 						</tr>
 						<tr class="row">
 							<td class="col" colspan="12">
-								<input type="text" class="form-input">
+								<input type="text" name="cusShopCity" required class="form-input">
 							</td>
 						</tr>
 					</table>
