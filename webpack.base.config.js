@@ -2,7 +2,7 @@
  * @Author: fanger
  * @Date:   2018-03-12 10:53:12
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-08-17 17:27:56
+ * @Last Modified time: 2018-08-21 11:40:26
  */
 
 const path = require('path');
@@ -19,7 +19,7 @@ var pagesEntry = getEntry(path.join(__dirname, 'src/pages/**/main.js'));
 
 function getEntry(globPath) {
   let entries = {};
-  glob.sync(globPath).forEach(function (path) {
+  glob.sync(globPath).forEach(function(path) {
     // 裁剪路径字符串为想要的入口名(为多入口生成对应目录层级)
     let name = path.slice(path.lastIndexOf('src/') + 4, path.length - 3);
     name = name.slice(0, name.lastIndexOf('/'));
@@ -28,32 +28,36 @@ function getEntry(globPath) {
   return entries;
 }
 
-
 // 基础配置
-const modeDev= process.env.NODE_ENV === 'development' ? true : false;
+const modePro = process.env.NODE_ENV === 'production' ? true : false;
 
 const webpackConfig = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   // entry: pagesEntry,
-  entry: Object.assign({}, pagesEntry
+  entry: Object.assign(
+    {},
+    pagesEntry
     /* , {
         // 用到什么公共lib（例如jquery.js），就把它加进vendor去，目的是将公用库单独提取打包
         'vendor': ['jquery', 'aaa']
       } */
   ),
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [{
+          use: [
+            {
               loader: 'css-loader',
               options: {
                 sourceMap: true,
-                minimize: !modeDev,
+                minimize: modePro,
                 importLoaders: 2
               }
-            }, {
+            },
+            {
               loader: 'sass-loader',
               options: {
                 sourceMap: true
@@ -67,14 +71,15 @@ const webpackConfig = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [{
+          use: [
+            {
               loader: 'css-loader',
               options: {
                 importLoaders: 1
                 // 指定启用css modules
-                // modules: true,  
+                // modules: true,
                 // 指定css的类名格式
-                // localIdentName: '[name]__[local]--[hash:base64:5]' 
+                // localIdentName: '[name]__[local]--[hash:base64:5]'
               }
             },
             'postcss-loader'
@@ -88,17 +93,18 @@ const webpackConfig = {
       },
       {
         test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
-        use: [{
-          loader: 'url-loader',
-          options: {
-            context: 'src/',
-            limit: 8192,
-            // 因为已复制图片到dist,避免重复这里处理后不改变图片文件名
-            // name: '[path]/[name].[hash:8].[ext]'
-            name: '[path]/[name].[ext]'
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              context: 'src/',
+              limit: 8192,
+              // 因为已复制图片到dist,避免重复这里处理后不改变图片文件名
+              // name: '[path]/[name].[hash:8].[ext]'
+              name: '[path]/[name].[ext]'
+            }
           }
-          
-        }]
+        ]
       },
       {
         test: /\.(html)$/i,
@@ -110,7 +116,7 @@ const webpackConfig = {
     splitChunks: {
       // chunks: 'initial', // 只对入口文件处理
       chunks: 'all',
-      name: true,
+      name: true
       /*  cacheGroups: {
          commons: { // split `common`和`components`目录下被打包的代码到`page/commons.js && .css`
            test: /assets\/scss\/|assets\/js\//,
@@ -129,11 +135,11 @@ const webpackConfig = {
     new ExtractTextPlugin({
       //输出的路径及文件名
       // filename: '[name]/[contenthash].css', //输出到入口文件路径下即页面同目录
-      filename: modeDev ? '../dist/static/style/[name].css' : './static/style/[name].css',
+         filename:  './static/style/[name].css',
       /* filename: (getPath) => {
         return getPath('../dist/assets/style/[name].css').replace('pages/', '');
       }, */
-      allChunks: true,
+      allChunks: true
       // disable: process.env.NODE_ENV === '"development"'
     }),
     // 复制src/pages/静态资源图片到build(dist)下
@@ -145,30 +151,38 @@ const webpackConfig = {
     // }], {
     //   ignore: ['*.html', '*.js', '*.scss', '*.css']
     // }),
-    new CopyWebpackPluginVendor([{
-      // 直接复制vendor到dist下
-      context: 'src/',
-      from: 'assets/vendor/**/*',
-      toType: 'dir'
-    }])
+    new CopyWebpackPluginVendor([
+      {
+        // 直接复制vendor到dist下
+        context: 'src/',
+        from: 'assets/vendor/**/*',
+        toType: 'dir'
+      }
+    ])
   ],
   output: {
     path: path.join(__dirname, 'dist'),
     // 发布地址，打包文件中所有相对路径引用的资源都会被配置的路径所替换。
     // publicPath: path.join(__dirname, 'dist'),
     // publicPath: '/',
-    // publicPath: modeDev ? '/' : 'http://localhost:8080/fresh-static/dist/',
-    publicPath: modeDev ? '/' : '../../',
-    filename: modeDev ? '[name]/[name].js' : '[name]/[chunkhash].js'
+    // publicPath: modePro ? 'http://localhost:8080/fresh-static/dist/' : '/'  ,
+    // publicPath: modePro ? '/' : '../../',
+    publicPath: '../../',
+    filename: '[name]/[chunkhash].js'
     // chunkFilename: '[name]/[name].[hash:5].bundle.js'
   }
 };
 
-
 // 遍历页面目录生成多入口
-Object.keys(pagesEntry).forEach(function (pathname) {
-  let fileOut = path.join(__dirname, 'dist/' + [pathname] + pathname.slice(pathname.lastIndexOf('/')) + '.html');
-  let tmplOrigin = path.join(__dirname, 'src/' + [pathname] + pathname.slice(pathname.lastIndexOf('/')) + '.html');
+Object.keys(pagesEntry).forEach(function(pathname) {
+  let fileOut = path.join(
+    __dirname,
+    'dist/' + [pathname] + pathname.slice(pathname.lastIndexOf('/')) + '.html'
+  );
+  let tmplOrigin = path.join(
+    __dirname,
+    'src/' + [pathname] + pathname.slice(pathname.lastIndexOf('/')) + '.html'
+  );
   // 每个页面生成一个html
   let htmlPluginConf = {
     // 生成出来的html存放路径
@@ -178,7 +192,7 @@ Object.keys(pagesEntry).forEach(function (pathname) {
     // 注入所有js静态资源到html
     inject: false,
     // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-    chunksSortMode: 'dependency',
+    chunksSortMode: 'dependency'
   };
 
   // console.log(pathname)
@@ -190,5 +204,8 @@ Object.keys(pagesEntry).forEach(function (pathname) {
   }
   webpackConfig.plugins.unshift(new HtmlWebpackPlugin(htmlPluginConf));
 });
+
+console.log('===============================' + modePro + '===============================');
+console.log('===============================' + webpackConfig.mode + '===============================');
 
 module.exports = webpackConfig;

@@ -2,7 +2,7 @@
  * @Author: Teaism 
  * @Date: 2018-06-22 17:39:17 
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-08-17 17:01:42
+ * @Last Modified time: 2018-08-21 10:56:49
  */
 @import '../../assets/scss/mixin';
 @import '../../assets/scss/variable';
@@ -26,5 +26,20 @@
     &:last-child {
       width: 400px;
     }
+  }
+  .form-file {
+    position: relative;
+    &:hover {
+      border-color: #fff;
+    }
+  }
+  .form-file::after {
+    position: absolute;
+    left: 0;
+    content: '';
+    display: inline-block;
+    @include wh(100%, 30px);
+    background: #fff url(./images/up-icon.png) no-repeat left center;
+    cursor: pointer;
   }
 }
