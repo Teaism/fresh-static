@@ -2,13 +2,12 @@
  * @Author: Teaism 
  * @Date: 2018-06-06 15:12:44 
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-08-16 11:30:02
+ * @Last Modified time: 2018-08-22 14:59:06
  */
-
 
 @import '../../assets/scss/reset';
 @import '../../assets/scss/mixin';
- 
+
 .container {
   width: 100%;
   font-size: $defaultFontColor;
@@ -16,7 +15,7 @@
 
 .content {
   width: 1200px;
-  margin: 10px auto
+  margin: 10px auto;
 }
 
 // header
@@ -81,7 +80,6 @@
       display: inline;
       z-index: 999;
     }
-
   }
   .nav-sub-two,
   .nav-sub-one {
@@ -98,8 +96,7 @@
         color: #fff;
       }
       &:hover {
-        background: rgba(60, 112, 38, .7);
-        ;
+        background: rgba(60, 112, 38, 0.7);
       }
     }
   }
@@ -153,4 +150,31 @@
   line-height: 48px;
   font-size: 20px;
   cursor: pointer;
+}
+
+// 分页
+.ui-page {
+  margin-top: 30px;
+  text-align: center;
+}
+.ui-page li {
+  display: inline-block;
+  margin: 0 5px;
+}
+.ui-page li a {
+  display: inline-block;
+  width: 30px;
+  height: 28px;
+  line-height: 28px;
+  color: #333;
+  text-align: center;
+}
+.ui-page li.prev a,
+.ui-page li.next a {
+  width: 50px;
+}
+.ui-page li.active a,
+.ui-page li:hover a {
+  background: $mainBlockColor;
+  color: #fff;
 }

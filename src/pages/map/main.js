@@ -5,7 +5,7 @@
  * @Last Modified time: 2018-08-17 17:26:14
 */
 
-import '../../assets/scss/common.scss';
+// import '../../assets/scss/common.scss';
 import './style.scss';
 
 import './js/setShopMap.js';
