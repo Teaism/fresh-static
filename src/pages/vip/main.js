@@ -6,6 +6,6 @@
 */
 
 
-// import '../../assets/scss/common.scss';
+import '../../assets/scss/common.scss';
 import './style.scss';
 

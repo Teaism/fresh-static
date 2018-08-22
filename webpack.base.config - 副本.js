@@ -2,7 +2,7 @@
  * @Author: fanger
  * @Date:   2018-03-12 10:53:12
  * @Last Modified by: Teaism
- * @Last Modified time: 2018-08-22 18:51:27
+ * @Last Modified time: 2018-08-22 18:25:07
  */
 
 const path = require('path');
@@ -35,7 +35,7 @@ const webpackConfig = {
   // entry: pagesEntry,
   entry: Object.assign({}, pagesEntry, {
     // 用到什么公共lib（例如jquery.js），就把它加进vendor去，目的是将公用库单独提取打包
-    common: ['./src/assets/scss/common.scss']
+    // common: ['common']
   }),
   module: {
     rules: [
@@ -112,17 +112,14 @@ const webpackConfig = {
       chunks: 'all',
       minSize: 3,
       minChunks: 2,
-      name: true,
+      name(module) {
+        return module
+      },
       cacheGroups: {
         common: {
-          test: /\.s?css$/,
+          test: /\.s?css$|\.js$/,
           name: 'pages/common',
           minChunks: 2
-        },
-        a: {
-          test: /\.js$/,
-          name: 'pages/a',
-          minChunks: 2,
         }
       }
     }
@@ -177,12 +174,12 @@ Object.keys(pagesEntry).forEach(function(pathname) {
     chunksSortMode: 'dependency'
   };
 
-  // console.log(pathname + '==============================');
+  console.log(pathname + '==============================');
 
   // 注入当前每个html引用的自己路径下的js模块，也可以在这里加上vendor等公用模块
   if (pathname in pagesEntry) {
-    htmlPluginConf.chunks = ['common', pathname];
-    console.log(htmlPluginConf.chunks+ '==============================')
+    htmlPluginConf.inject = true;
+    htmlPluginConf.chunks = ['manifest', 'common', 'vendor', pathname];
   }
   webpackConfig.plugins.unshift(new HtmlWebpackPlugin(htmlPluginConf));
 });
